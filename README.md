@@ -1,2 +1,2 @@
-# A project I create for practicing coding interview
+# A project I create for learning coding interview
 # Programming language: Python
