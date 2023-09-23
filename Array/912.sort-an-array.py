@@ -58,7 +58,7 @@ class Solution:
             if head >= tail: 
                 return 
             l, r = head, tail
-            # m = (r - l) // 2 + l
+            
             m = random.randint(l,r)
             pivot = nums[m]
             while r >= l:
