@@ -1,8 +1,8 @@
-from typing import List
+from typing import Collection, List
 
 
 class Solution:
-    def maxOperations(self, nums: List[int], k: int) -> int:
+    def maxOperationsV2(self, nums: List[int], k: int) -> int:
         if len(nums) == 0:
             return 0
 
@@ -26,8 +26,16 @@ class Solution:
                 right -= 1
         return operation
     
-solution = Solution()
-print(solution.maxOperations([1,2,3,4], 5))
-        
-        
-            
+    def maxOperations(self, nums: List[int], k: int) -> int:
+        cnt = Collection.defaultdict(int)
+        ans = 0
+
+        for num in nums:
+            complement = k - num
+            if complement in cnt and cnt[complement] > 0:
+                ans += 1
+                cnt[complement] -= 1
+            else:
+                cnt[num] += 1
+
+        return ans
