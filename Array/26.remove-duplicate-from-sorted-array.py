@@ -33,3 +33,6 @@ class Solution(object):
                 f += 1
                 nums[f] = nums[i]
         return f + 1
+    
+solution = Solution()
+print(solution.removeDuplicates(sorted([9,4,9,8,4])))
