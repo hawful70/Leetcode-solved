@@ -25,14 +25,14 @@ class Solution(object):
         return n - found
 
     def removeDuplicates(self, nums):
-        f = 0
+        f = 1
         n = len(nums)
 
         for i in range(1, n):
-            if nums[i] != nums[f]:
-                f += 1
+            if nums[i] != nums[f - 1]:
                 nums[f] = nums[i]
-        return f + 1
+                f += 1
+        return f
     
 solution = Solution()
 print(solution.removeDuplicates(sorted([9,4,9,8,4])))
